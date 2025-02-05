@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://i.pinimg.com/originals/36/3d/36QvCuq6x.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+            overflow: hidden;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0); opacity: 1; }
+            50% { transform: translate(20px, -50px); opacity: 0.5; }
+            100% { transform: translate(0, -100px); opacity: 0; }
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #555;
+        }
+        .yes {
+            background-color: rgba(255, 64, 129, 0.8);
+            color: white;
+        }
+        .no {
+            background-color: rgba(176, 190, 197, 0.8);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>For Kinadene &lt;3</h1>
+    <!-- Hearts -->
+    <script>
+        const body = document.body;
+        for (let i = 0; i < 34; i++) { // Adding 34 hearts to include 30 new ones
+            const heart = document.createElement('img');
+            heart.src = "https://cdn-icons-png.flaticon.com/512/833/833472.png";
+            heart.classList.add('heart');
+            heart.style.top = `${Math.random() * 100}%`;
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDelay = `${Math.random() * 3}s`;
+            heart.style.transform = `scale(${Math.random() + 0.5})`;
+            body.appendChild(heart);
+        }
+    </script>
+    <div class="text-overlay">Do you want to be my Valentine?</div>
+    <div class="buttons">
+        <button class="button yes" onclick="alert('Duh why will you say no 😆')">Yes 😊</button>
+        <button class="button no" onclick="alert('Girl better go press yes rn 😤')">No 😢</button>
+    </div>
+</body>
+</html>
